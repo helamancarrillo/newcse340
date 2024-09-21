@@ -3,4 +3,162 @@
 *:before,
 *:after {
   box-sizing: border-box;
+} 
+*{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+/* Site Size*/
+
+ body{
+  margin-top: 40px;
+  margin-left: 190px;
+  margin-right: 190px;
+  margin-bottom: 40px;
+ }
+
+/* Navigation Stuff*/ 
+
+.grid { /* Eliminar*/
+  display: block;
+  /*grid-template-columns: 2fr 1fr; */
+} /* Eliminar*/
+
+.navbar { /* Eliminar*/
+  display: flex;
+  flex-direction: row;
+  padding: 0px; 
+}  /* Eliminar*/
+
+.navbar li {
+  flex: 1 1 100% ;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  background-color: rgb(42, 98, 154);
+}
+
+nav {
+  grid-template-rows: 1fr;
+}
+
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 13px;
+  display: block;
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: rgb(9, 44, 78);
+  
+}
+
+/* Navigation Stuff*/ 
+
+.siteName a {
+  font-size: 2.5rem;
+  text-decoration: none; 
+}
+
+#tools a {
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 2px;
+   
+}
+
+#top-header {
+  padding: 5px;
+  position: relative;
+
+}
+
+/* BODY Stuff*/ 
+
+.card ul li{
+  padding: 4px;
+}
+
+.card{
+   
+  margin: 10px;
+}
+
+.card .dos2 h2{
+  justify-content: center;
+}
+
+#container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr .5fr 1fr .51fr;
+  
+}
+
+#container a{
+  text-align: center;
+}
+
+.it {
+  padding: 1em;
+  border: solid rgb(16, 87, 121);
+  margin: 5px;
+
+}
+
+.it3{
+  
+  grid-row-start: 3;
+  grid-row-end: 4;
+
+}
+
+.it4{
+  
+  grid-row-start: 3;
+  grid-row-end: 4; 
+
+}
+
+#P1{
+  
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+}
+
+h1{
+  color: rgb(9, 44, 78) ;
+}
+
+span a {
+  color: rgb(9, 44, 78);
+
+}
+
+
+@media only screen and (min-width: 940px) {
+  .grid { /* Eliminar*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  } /* Eliminar*/
+  
+  .navbar { /* Eliminar*/
+    display: flex;
+    flex-direction: row;
+    padding: 0px; 
+  }  /* Eliminar*/
+
+  .navbar li {
+    flex: 1 1 100% ;
+  }
+
 }

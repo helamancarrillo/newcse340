@@ -29,6 +29,13 @@ app.get("/", function(req, res){
 })
 
 /* ***********************
+ * IMAGES
+ *************************/
+
+
+
+
+/* ***********************
  * Local Server Information
  * Values from .env (environment) file
  *************************/
