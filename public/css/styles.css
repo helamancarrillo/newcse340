@@ -20,13 +20,14 @@
   /*grid-template-columns: 2fr 1fr; */
 } /* Eliminar*/
 
-.navbar { /* Eliminar*/
+nav ul { /* Eliminar  . bar */ 
   display: flex;
   flex-direction: row;
   padding: 0px; 
+  width: 100%;
 }  /* Eliminar*/
 
-.navbar li {
+nav li { /* Eliminar  . bar */
   flex: 1 1 100% ;
   list-style-type: none;
   padding: 0px;
@@ -39,7 +40,7 @@ nav {
 }
 
 
-.navbar a {
+nav a {  /* Eliminar  . bar */
   color: #fff;
   text-decoration: none;
   padding: 13px;
@@ -47,7 +48,7 @@ nav {
   text-align: center;
 }
 
-.navbar a:hover {
+nav a:hover {  /* Eliminar  . bar */
   background-color: rgb(9, 44, 78);
   
 }
@@ -178,6 +179,53 @@ h1{
   background-color: rgb(42, 98, 154);
 } 
 
+/*  INV DISPLAY STUFF */
+
+#inv-display{
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  gap: 20px ;
+  
+  
+   
+
+}
+
+#inv-display li{
+  border: solid  rgb(42, 98, 154);
+  border-radius: 5px;
+  place-items: center;
+
+}
+
+#inv-display li hr{
+  display: none;
+  
+}
+
+#inv-display li::marker{
+  content: none;
+  
+}
+
+.namePrice {
+  text-align: center;
+
+}
+
+
+#inv-display li img{
+  display: block;
+  margin: 0 auto;
+ 
+  
+}
+
+
+
+
+
+
 
 
 @media only screen and (min-width: 700px) {
@@ -186,18 +234,24 @@ h1{
     grid-template-columns: 1fr 1fr;
   } /* Eliminar*/
   
-  .navbar { /* Eliminar*/
+  nav { /* Eliminar  . bar*/
     display: flex;
     flex-direction: row;
     padding: 0px; 
   }  /* Eliminar*/
 
-  .navbar li {
+  nav li { /* Eliminar  . bar*/
     flex: 1 1 100% ;
   }
 
   .hero span {
     font-size: larger;
+  }
+
+  #inv-display{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+  
   }
 
 }
