@@ -36,6 +36,44 @@ Util.buildClassificationGrid = async function(data){
   }
 
 
+/* **************************************
+* Build the detail view 
+* ************************************ */
+Util.buildInventoryDetailGrid = async function(data) {
+  let grid
+  grid = `<div id="details-container">`
+  grid += `<div class="image-container">`
+  grid += `<img src="${data.inv_image}" alt="Image of ${data.inv_make} ${data.inv_model} on CSE Motors" id="vehicle-img-large">` 
+  grid += `</div>`
+  grid += `<section id="vehicle-details">`
+  grid += `<h2 class="section-title">${data.inv_make} ${data.inv_model} Details</h2>`
+  grid += `<table><tbody>`
+  grid += `<tr><td><span class="details-label">Price: $${new Intl.NumberFormat('en-US').format(data.inv_price)}</span></td></tr>`
+  grid += `<tr><td><span class="details-label">Description: </span>`
+  grid += `<span class="details-text">${data.inv_description}</span></td></tr>`
+  grid += `<tr><td><span class="details-label">Color: </span>`
+  grid += `<span class="details-text">${data.inv_color}</span></td></tr>`
+  grid += `<tr><td><span class="details-label">Miles: </span>`
+  grid += `<span class="details-text">${new Intl.NumberFormat('en-US').format(data.inv_miles)}</span></td></tr>`
+  grid += `</tbody></table></section></div>`
+  return grid
+}
+
+/* **************************************
+* Build the error handler
+* ************************************ */
+Util.buildErrorMessage = async function(error) {
+  let message
+  message = `<div id="error-page">`
+  message += `<h2>${error.message}</h2>`
+  message += `<img src="images/site/error.webp" width="600" height="400" loading="lazy" alt="Error image" id="error-img">`
+  message += `<div><a href="https://stock.adobe.com/hn/search?k=error&asset_id=297016511" target="_blank" id="photo-source">Image by Adobe Stock</a></div>`
+  message += `</div>`
+  return message
+}
+
+
+
 
 /* ************************
  * Constructs the nav HTML unordered list

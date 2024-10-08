@@ -222,6 +222,40 @@ h1{
 }
 
 
+/* Details Stuff*/
+
+#details-container{
+  display: grid;
+  grid-template-columns: 1fr;
+
+}
+
+.image-container img{
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+
+}
+
+.details-label {
+  text-decoration: solid;
+  color: rgb(0, 0, 0);
+  font-size:larger;
+  font-weight: bolder;
+  
+}
+
+#vehicle-details table td{
+  padding: 10px;
+}
+
+#vehicle-details table tr:nth-child(even){
+  background-color: rgb(224, 236, 236);
+}
+
+
+
+
 
 
 @media only screen and (min-width: 700px) {
@@ -247,6 +281,12 @@ h1{
   #inv-display{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
+  
+  }
+
+  #details-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   
   }
 
