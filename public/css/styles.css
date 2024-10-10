@@ -254,6 +254,58 @@ h1{
 }
 
 
+/* Login Stuff*/
+.login-card {
+  display: block;
+  margin: 10px auto;
+  width: 400px;
+  max-width: 100%;
+  
+}
+
+.login-input {
+  width: 100%;
+  font-size: 18px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+#sign-up {
+  text-align: center;
+}
+
+#fielset{
+  background-color: rgb(142, 202, 230);
+  border-radius: 10px;
+  
+}
+
+.form-button {
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 10px;
+  display: block;
+  cursor: pointer;
+}
+
+.form-button:hover{
+  background-color:rgb(240, 235, 82) ;
+}
+
+
+#login-form {
+  /*background-color: rgb(142, 202, 230);*/
+  padding: 20px;
+  
+}
+
+#sign-up a {
+  color: var(--color-light);
+}
+
+
 
 
 

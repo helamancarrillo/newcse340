@@ -99,6 +99,29 @@ Util.getNav = async function (req, res, next) {
 }
 
 
+
+Util.buildLoginForm = function() {
+  let form 
+  form = `<div class="login-card">
+      <fieldset id="fielset">
+      <form id="login-form">
+          <label>Email:<br>
+          <input type="email" id="login-username" name="username" class="login-input"></label><br>
+          <label>Password:<br>
+          <input type="password" id="login-password" name="password" class="login-input"></label><br>
+          <input type="submit" value="Login" class="form-button" title="Click here to login"> 
+      </form>
+      <div id="sign-up">
+          <span>No account?</span>
+          <a title="Click here to sign up" href="/account/login/#">Sign-up</a>
+      </div>
+      </fieldset>
+    </div>`
+  return form
+}
+
+
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 
