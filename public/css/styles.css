@@ -255,7 +255,7 @@ h1{
 
 
 /* Login Stuff*/
-.login-card {
+.form-card {
   display: block;
   margin: 10px auto;
   width: 400px;
@@ -263,7 +263,7 @@ h1{
   
 }
 
-.login-input {
+.form-input {
   width: 100%;
   font-size: 18px;
   padding: 5px;
@@ -301,8 +301,20 @@ h1{
   
 }
 
-#sign-up a {
-  color: var(--color-light);
+
+/* Register Stuff */
+
+#password-note {
+   
+  font-size: 15px;
+  font-weight: bold;  
+  padding-left: 20px;
+}
+
+#fieldset{
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  
 }
 
 

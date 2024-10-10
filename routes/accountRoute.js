@@ -10,4 +10,7 @@ const utilities = require("../utilities/")
 // deliver login view
 router.get("/login", utilities.handleErrors(acctController.buildLogin))
 
+//deliver registration view
+router.get("/register", utilities.handleErrors(acctController.buildRegister))
+
 module.exports = router

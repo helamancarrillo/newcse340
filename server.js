@@ -67,7 +67,7 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 // Inventory routes
 app.use("/inv", inventoryRoute)
 
-//login route
+//login and register route
 app.use("/account", accountRoute)
 app.use(errorRoute)
 
