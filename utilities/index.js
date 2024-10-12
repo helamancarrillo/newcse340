@@ -100,56 +100,56 @@ Util.getNav = async function (req, res, next) {
 
 
 
-Util.buildLoginForm = function() {
-  let form 
-  form = `<div class="form-card">
-      <fieldset id="fielset">
-      <form id="login-form">
-          <label>Email:
-          <input type="email" id="login-username" name="username" class="form-input"></label><br>
-          <label>Password:
-          <input type="password" id="login-password" name="password" class="form-input"></label><br>
-          <input type="submit" value="Login" class="form-button" title="Click here to login"> 
-      </form>
-      <div id="sign-up">
-          <span>No account?</span>
-          <a title="Click here to sign up" href="/account/register">Sign-up</a>
-      </div>
-      </fieldset>
-    </div>`
-  return form
-}
-
-
-Util.buildRegistrationForm = function () {
-  let form
-  form = `<div class="form-card">
-      <fieldset id="fielset">
-      <form id="register-form">
-          <p>*All fields are required</p>
-          <label>First Name:
-              <input type="text" name="account_firstname" class="form-input">
-            </label><br>
-          <label>Last Name:
-              <input type="text" name="account_lastname" class="form-input">
-          </label><br>
-          <label>Email:
-            <input type="email" name="account_email" class="form-input">
-          </label><br>
-          <label>Password:
-            <input type="password" name="account_password" class="form-input">
-          </label><br>
-          <section id="password-note">
-          <p>Passwords must be min 12 characters in length, 
-          contain at least 1 capital letter, contain at least 1 number,
-          and contain at least 1 special character </p>
-          </section>
-          <input type="submit" value="Register" class="form-button" title="Click here to submit registration">
-      </fieldset>
-      </form>
-  </div>`
-  return form;
-}
+//Util.buildLoginForm = function() {
+//  let form 
+//  form = `<div class="form-card">
+//      <fieldset id="fielset">
+//      <form id="login-form">
+//          <label>Email:
+//          <input type="email" id="login-username" name="username" class="form-input"></label><br>
+//          <label>Password:
+//          <input type="password" id="login-password" name="password" class="form-input"></label><br>
+//          <input type="submit" value="Login" class="form-button" title="Click here to login"> 
+//      </form>
+//      <div id="sign-up">
+//          <span>No account?</span>
+//          <a title="Click here to sign up" href="/account/register">Sign-up</a>
+//      </div>
+//      </fieldset>
+//    </div>`
+//  return form
+//}
+//
+//
+//Util.buildRegistrationForm = function () {
+//  let form
+//  form = `<div class="form-card">
+//      <fieldset id="fielset">
+//      <form id="register-form">
+//          <p>*All fields are required</p>
+//          <label>First Name:
+//              <input type="text" name="account_firstname" class="form-input">
+//            </label><br>
+//          <label>Last Name:
+//              <input type="text" name="account_lastname" class="form-input">
+//          </label><br>
+//          <label>Email:
+//            <input type="email" name="account_email" class="form-input">
+//          </label><br>
+//          <label>Password:
+//            <input type="password" name="account_password" class="form-input">
+//          </label><br>
+//          <section id="password-note">
+//          <p>Passwords must be min 12 characters in length, 
+//          contain at least 1 capital letter, contain at least 1 number,
+//          and contain at least 1 special character </p>
+//          </section>
+//          <input type="submit" value="Register" class="form-button" title="Click here to submit registration">
+//      </fieldset>
+//      </form>
+//  </div>`
+//  return form;
+//}
 
 
 

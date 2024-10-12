@@ -6,8 +6,24 @@
 
     <%- messages() %>
 
+    <div class="form-card">
+      <fieldset id="fielset">
+        <form id="login-form">
+            <label>Email:
+            <input type="email" id="login-username" name="username" class="form-input" required></label><br>
+            <label>Password:
+            <input type="password" id="login-password" name="password" class="form-input" required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" ></label><br>
+            <input type="submit" value="Login" class="form-button" title="Click here to login"> 
+        </form>
+        <div id="sign-up">
+            <span>No account?</span>
+            <a title="Click here to sign up" href="/account/register">Sign-up</a>
+        </div>
+      </fieldset>
+    </div>
 
-    <%- login %>
+
+    
 
     
     

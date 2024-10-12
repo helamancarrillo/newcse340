@@ -7,4 +7,36 @@
     
     <%- messages() %>
 
-    <%- register %>
+    <% if (errors) { %>
+      <ul class="notice">
+     <% errors.array().forEach(error => { %>
+       <li><%= error.msg %></li>
+    <%  }) %>
+     </ul>
+    <% } %>
+
+    <div class="form-card">
+      <fieldset id="fielset">
+      <form id="register-form" action="/account/register" method="post">
+          <p>*All fields are required</p>
+          <label>First Name:
+              <input type="text" name="account_firstname" class="form-input" required>
+            </label><br>
+          <label>Last Name:
+              <input type="text" name="account_lastname" class="form-input" required>
+          </label><br>
+          <label>Email:
+            <input type="email" name="account_email" class="form-input" required>
+          </label><br>
+          <label>Password:
+            <input type="password" name="account_password" class="form-input" required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
+          </label><br>
+          <section id="password-note">
+          <p>Passwords must be min 12 characters in length, 
+          contain at least 1 capital letter, contain at least 1 number,
+          and contain at least 1 special character </p>
+          </section>
+          <input type="submit" value="Register" class="form-button" title="Click here to submit registration">
+      </fieldset>
+      </form>
+  </div>
