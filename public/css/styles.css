@@ -291,7 +291,7 @@ h1{
 }
 
 .form-button:hover{
-  background-color:rgb(240, 235, 82) ;
+  background-color:rgb(240, 235, 82);
 }
 
 
@@ -318,6 +318,26 @@ h1{
 }
 
 
+/* Validation Stuff*/
+
+input:required:invalid, input:focus:invalid {
+  border-right: 6px solid #9c2c13 ;
+  border-radius: 7px;
+ }
+
+input:required:valid {
+  border-right: 6px solid rgb(20, 122, 42);
+  border-radius: 7px;
+ }
+
+.notice li:nth-child(even){
+  color: #9c2c13;
+}
+
+.notice li:nth-child(odd){
+  display: none;
+ 
+}
 
 
 
