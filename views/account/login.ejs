@@ -6,13 +6,21 @@
 
     <%- messages() %>
 
+    <% if (errors) { %>
+      <ul class="notice">
+     <% errors.array().forEach(error => { %>
+       <li><%= error.msg %></li>
+    <%  }) %>
+     </ul>
+    <% } %>
+
     <div class="form-card">
       <fieldset id="fielset">
-        <form id="login-form">
+        <form id="login-form" action="/account/login" method="post">
             <label>Email:
-            <input type="email" id="login-username" name="username" class="form-input" required></label><br>
+            <input type="email" id="login-username" name="account_email" class="form-input" required placeholder="Enter account email address" value="<%= locals.account_email %>"></label><br>
             <label>Password:
-            <input type="password" id="login-password" name="password" class="form-input" required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" ></label><br>
+            <input type="password" id="login-password" name="account_password" class="form-input" required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" ></label><br>
             <input type="submit" value="Login" class="form-button" title="Click here to login"> 
         </form>
         <div id="sign-up">

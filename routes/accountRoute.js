@@ -17,4 +17,7 @@ router.get("/register", utilities.handleErrors(acctController.buildRegister))
 //registering the new account 
 router.post("/register",regValidate.registationRules(),regValidate.checkRegData,utilities.handleErrors(acctController.registerAccount))
 
+// Process the login attempt
+router.post("/login",regValidate.loginRules(),regValidate.checkLoginData,(req, res) => {res.status(200).send('login process')})
+
 module.exports = router

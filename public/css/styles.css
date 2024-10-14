@@ -330,14 +330,15 @@ input:required:valid {
   border-radius: 7px;
  }
 
-.notice li:nth-child(even){
+.notice li {
   color: #9c2c13;
 }
 
-.notice li:nth-child(odd){
+/*.notice li:nth-child(odd){
   display: none;
  
 }
+*/ 
 
 
 

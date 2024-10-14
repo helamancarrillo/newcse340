@@ -20,13 +20,13 @@
       <form id="register-form" action="/account/register" method="post">
           <p>*All fields are required</p>
           <label>First Name:
-              <input type="text" name="account_firstname" class="form-input" required>
+              <input type="text" name="account_firstname" class="form-input" required value="<%= locals.account_firstname %>">
             </label><br>
           <label>Last Name:
-              <input type="text" name="account_lastname" class="form-input" required>
+              <input type="text" name="account_lastname" class="form-input" required value="<%= locals.account_lastname %>">
           </label><br>
           <label>Email:
-            <input type="email" name="account_email" class="form-input" required placeholder="Enter a valid email address">
+            <input type="email" name="account_email" class="form-input" required placeholder="Enter a valid email address" value="<%= locals.account_email %>">
           </label><br>
           <label>Password:
             <input type="password" name="account_password" class="form-input" required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
