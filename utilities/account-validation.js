@@ -17,12 +17,17 @@ validate.loginRules = () => {
       .isEmail()
       .normalizeEmail() // refer to validator.js docs
       .withMessage("A valid email is required.")
-    //   .custom(async (account_email) => {
-    //     const emailExists = await accountModel.checkExistingEmail(account_email)
-    //     if (!emailExists){
-    //         throw new Error("Email does not exist. Please sign up or use different email")
-    //     }  
-    //   }),
+       .custom(async (account_email) => {
+         const emailExists = await accountModel.checkExistingEmail(account_email)
+         if (!emailExists){
+             throw new Error("Email does not exist. Please sign up or use different email")
+         }  
+       }),
+       body("account_password")
+      .trim()
+      .escape()
+      .notEmpty()
+      .withMessage("Please enter a password.")
     ]
   }
 

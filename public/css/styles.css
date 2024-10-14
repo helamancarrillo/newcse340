@@ -263,7 +263,7 @@ h1{
   
 }
 
-.form-input {
+.form-input, #classificationList {
   width: 100%;
   font-size: 18px;
   padding: 5px;
@@ -274,7 +274,7 @@ h1{
   text-align: center;
 }
 
-#fielset{
+#fielset {
   background-color: rgb(142, 202, 230);
   border-radius: 10px;
   
@@ -304,14 +304,14 @@ h1{
 
 /* Register Stuff */
 
-#password-note {
+.validation-note {
    
   font-size: 15px;
   font-weight: bold;  
   padding-left: 20px;
 }
 
-#fieldset{
+#fieldset,  #classificationList{
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   
@@ -339,6 +339,15 @@ input:required:valid {
  
 }
 */ 
+
+/* Management View */
+
+.mgmt-link a{
+  display: block;
+  padding: 5px;
+
+}
+
 
 
 

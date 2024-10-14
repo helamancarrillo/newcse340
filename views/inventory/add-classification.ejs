@@ -11,3 +11,17 @@
       <%  }) %>
        </ul>
       <% } %>
+
+      <div class="form-card">
+        <fieldset id="fielset">
+        <form id="classification-form" action="/inv/add-classification" method="post">
+            <p>*Field is required</p>
+            <div class="validation-note"><p>NAME MUST BE ALPHABETIC CHARACTERS ONLY</p></div>
+            <label>Classification Name:
+              <input type="text" name="classification_name" class="form-input" 
+              required pattern="[A-Za-z]+" value="<%= locals.classification_name %>">
+            </label>
+            <input type="submit" value="Add Classification" class="form-button" title="Click here to add new classification">
+        </fieldset>
+        </form>
+        </div>
