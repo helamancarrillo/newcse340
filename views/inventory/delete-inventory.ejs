@@ -1,0 +1,67 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else { res.redirect('/') } %> <%- messages() %> <% if (errors) { %>
+    <ul class="notice">
+      <% errors.array().forEach(error => { %>
+      <li><%= error.msg %></li>
+      <% }) %>
+    </ul>
+    <% } %>
+
+    <div class="form-card">
+    <fieldset id="fielset">
+      <form id="inventory-form" action="/inv/delete" method="POST">
+        <p>**Confirm Deletion.**</p>
+        
+        <label
+          >Make:
+          <input
+            type="text"
+            class="form-input"
+            readonly
+            <% if(locals.inv_make) { %>
+            value="<%= locals.inv_make %>"<% } %>
+          />
+        </label>
+        <label
+          >Model:
+          <input
+            type="text"
+            class="form-input"
+            readonly
+            <% if(locals.inv_model) { %>
+            value="<%= locals.inv_model %>"<% } %>
+          />
+        </label>
+            <label
+          >Price:
+          <input
+            type="number"
+            class="form-input"
+            readonly
+            <% if(locals.inv_price) { %>
+            value="<%= locals.inv_price %>"<% } %>
+          />
+        </label>
+        <label
+          >Year:
+          <input
+            type="number"
+            class="form-input"
+            readonly
+            <% if(locals.inv_year) { %>
+            value="<%= locals.inv_year %>"<% } %>
+          />
+        </label>
+        <input
+          type="submit"
+          value="Delete"
+          class="form-button"
+          title="Click here to delete vehicle"
+          id="delete-btn"
+        />
+        <input type="hidden" name="inv_id" <% if(locals.inv_id) { %> value="<%=
+        locals.inv_id %>" <% } %>>
+      </fieldset>
+      </form>
+    </div>

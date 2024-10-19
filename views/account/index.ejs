@@ -1,19 +1,25 @@
 <% if (title) { %>
-    <h1><%= title %></h1>
-    <% } else {
-      res.redirect('/')
-    } %>
-    
-    <%- messages() %>
-
-    <% if (errors) { %>
-        <ul class="notice">
-       <% errors.array().forEach(error => { %>
-         <li><%= error.msg %></li>
-      <%  }) %>
-       </ul>
-      <% } %>
-
-
-      <h1>You're logged in.</h1>
+  <h1><%= title %></h1>
+  <% } else { res.redirect('/') } %> <%- messages() %> <% if (errors) { %>
+  <ul class="notice">
+    <% errors.array().forEach(error => { %>
+    <li><%= error.msg %></li>
+    <% }) %>
+  </ul>
+  <% } %>
+  
+  <div class="mgmt-card">
+    <h2 class="mgmt-header">Welcome <%= locals.accountData.account_firstname %></h2>
+    <!-- <p class="mgmt-text">You're logged in.</p> -->
+    <div class="mgmt">
+      <a class="form-button acct-link" href="/account/edit/<%= locals.accountData.account_id %>">Edit Account Information</a>
+  
+      <% if (locals.loggedin) {
+        if (locals.accountData.account_type === "Employee" || locals.accountData.account_type === "Admin") { %>
+          <h3 id="acct-inv-header">Inventory Management</h3>
+          <a class="form-button acct-link" href="/inv">Manage Inventory</a> 
+        <% } 
+       } %>
+    </div>
+  </div>  
 

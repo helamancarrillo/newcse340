@@ -213,5 +213,32 @@ Util.checkJWTToken = (req, res, next) => {
  }
 
 
+ /* ****************************************
+ *  Check Login
+ * ************************************ */
+ Util.checkLogin = (req, res, next) => {
+  if (res.locals.loggedin) {
+    next()
+  } else {
+    req.flash("notice", "Please log in.")
+    return res.redirect("/account/login")
+  }
+ }
+
+
+/* ****************************************
+*  Check if Employee or Admin level authorization
+* ************************************ */
+Util.checkAuthorized = (req, res, next) => {
+  Util.checkLogin(req, res, () => {
+    if (res.locals.accountData.account_type == "Employee" || res.locals.accountData.account_type == "Admin") {
+      next()
+    } else {
+      req.flash("notice", "Unauthorized. You do not have permission to access the page.")
+      return res.redirect("/account/login")
+    }
+  })
+}
+
 
 module.exports = Util

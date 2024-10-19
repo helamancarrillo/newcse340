@@ -71,6 +71,20 @@ nav a:hover {  /* Eliminar  . bar */
    
 }
 
+#tools {
+  font-variant: small-caps;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.welcome-user {
+  font-style: italic;
+  margin: 0;
+  padding: 0 20px;
+}
+
 #top-header {
   padding: 5px;
   position: relative;
@@ -250,11 +264,11 @@ h1{
 }
 
 #vehicle-details table tr:nth-child(even){
-  background-color: rgb(244, 211, 94);
+  background-color: rgb(224, 236, 236);
 }
 
 
-/* Login Stuff 224, 236, 236*/
+/* Login Stuff */
 .form-card {
   display: block;
   margin: 10px auto;
@@ -304,11 +318,27 @@ h1{
 
 /* Register Stuff */
 
+/**/
 .validation-note {
-   
   font-size: 15px;
   font-weight: bold;  
   padding-left: 20px;
+
+}
+
+/**/
+.validation-note p {
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+/**/
+.validation-note ul {
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 0 20px 10px;
+  text-align: left;
 }
 
 #fieldset,  #classificationList{
@@ -340,15 +370,132 @@ input:required:valid {
 }
 */ 
 
+#save-changes-btn:disabled {
+  color: grey;
+}
+
 /* Management View */
 
-.mgmt-link a{
+/**/
+.mgmt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/**/
+.mgmt-link {
   display: block;
   padding: 5px;
+  margin-top: 0;
 
 }
 
+.mgmt-card {
+  font-size: 20px;
+  padding: 20px;
+  background-color: var(--color-contrast);
+  color: var(--color-light);
+  border-radius: 10px;
+}
 
+.mgmt-card {
+  display: block;
+  margin: 10px auto;
+  max-width: 800px;
+  font-family: var(--font-sans);
+}
+
+
+#inventoryDisplay {
+  margin: 0 auto;
+}
+
+.mgmt-header {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 28px;
+  color: rgb(9, 44, 78);
+}
+
+
+#inventoryDisplay th {
+  text-align: center;
+}
+
+.mgmt-card td {
+  display: block;
+  text-align: center;
+}
+
+.mgmt-label {
+  width: 100%;
+  font-size: 20px;
+  padding: 5px;
+  margin: 0;
+}
+
+.mgmt-card th {
+  text-align: left;
+  padding: 20px 0;
+  font-size: 22px;
+}
+
+.mgmt-button {
+  margin: 10px;
+  padding: 5px 40px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 10px;
+  color: rgb(42, 98, 154);
+  display: block;
+  cursor: pointer;
+}
+
+#inventoryDisplay th {
+  text-align: left;
+}
+
+.mgmt-tr td {
+  border-bottom: 2px solid var(--color-light);
+  display: table-cell;
+  text-align: left;
+}
+
+/**/
+#acct-inv-header {
+  margin: 0;
+  padding: 10px;
+}
+
+/**/
+.acct-link {
+  font-family: var(--font-sans);
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 10px 30px;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+/**/
+.mgmt-text {
+  text-align: center;
+  margin: 0;
+}
+
+/**/
+.notice {
+  color: red;
+  list-style-type: none;
+} 
 
 
 
