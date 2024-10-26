@@ -21,7 +21,10 @@ router.get("/", utilities.checkLogin,utilities.handleErrors(acctController.build
 router.get("/logout", utilities.handleErrors(acctController.accountLogout))
 
 // build the account edit page
-router.get("/edit/:account_id", utilities.handleErrors(acctController.buildEditAccount))
+router.get("/edit/:account_id", 
+    utilities.checkLogin,
+    utilities.checkUserMatch,
+    utilities.handleErrors(acctController.buildEditAccount))
 
 //registering the new account 
 router.post("/register",regValidate.registationRules(),regValidate.checkRegData,utilities.handleErrors(acctController.registerAccount))

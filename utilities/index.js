@@ -240,5 +240,16 @@ Util.checkAuthorized = (req, res, next) => {
   })
 }
 
+Util.checkUserMatch = (req, res, next) => {
+  Util.checkLogin(req, res, () => {
+    if (res.locals.accountData.account_id == req.params.account_id) {
+      next()
+    } else {
+      req.flash("notice", "Unauthorized. You do not have permission to access the page.")
+      return res.redirect("/account/login")  
+    }
+  })
+}
+
 
 module.exports = Util

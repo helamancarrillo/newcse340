@@ -161,7 +161,7 @@ h1{
 
 .hero span{
   position: absolute;
-  bottom: 40%;
+  bottom: 30%;
   width: 20%;
   left: 10px;
   background: rgba(221, 220, 220, 0.873);
@@ -323,6 +323,7 @@ h1{
   font-size: 15px;
   font-weight: bold;  
   padding-left: 20px;
+  margin-bottom: 20px;
 
 }
 
@@ -496,6 +497,13 @@ input:required:valid {
   color: red;
   list-style-type: none;
 } 
+
+
+#tools .welcome-user{
+  position: absolute;
+  left: 10px;
+  top: 40px;
+}
 
 
 

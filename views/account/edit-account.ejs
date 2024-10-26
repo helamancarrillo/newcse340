@@ -7,7 +7,9 @@
       <% }) %>
     </ul>
     <% } %>
+
     <div class="form-card">
+      <fieldset id="fielset">
       <form id="account-form" action="/account/edit-account" method="post">
         <p>*All fields are required</p>
         <label
@@ -52,7 +54,7 @@
       <hr>
       <form id="password-form" action="/account/edit-password" method="post">
         <h2>Update Password</h2>
-        <p>*Note your original password will be changed.</p>
+        <p>*Your initial password will be updated or replaced with a new one.</p>
       <label
           >Password:
           <input
@@ -64,13 +66,10 @@
             > </label
             ><br>
             <div class="validation-note">
-              <p>Password must be:</p>
-              <ul>
-                <li>12 characters in length, min</li>
-                <li>contain at least 1 capital letter</li>
-                <li>contain at least 1 number</li>
-                <li>contain at least 1 special character</li>
-              </ul>
+              <p>Passwords must be min 12 characters in length, 
+                 contain at least 1 capital letter, contain at least 1 number,
+                 and contain at least 1 special character
+              </p>
             </div>
         <input
           type="submit"
@@ -80,5 +79,6 @@
         >
         <input type="hidden" name="account_id" 
         <% if(locals.account_id) { %> value="<%= locals.account_id %> " <% } %>>
+      </fieldset>
       </form>
     </div>

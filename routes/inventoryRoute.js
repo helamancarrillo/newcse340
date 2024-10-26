@@ -30,7 +30,7 @@ router.get("/edit/:inv_id", utilities.checkAuthorized, utilities.handleErrors(in
 router.get("/delete/:inv_id", utilities.checkAuthorized, utilities.handleErrors(invController.buildDeleteInventory))
 
 // add a new classification
-router.post("/add-classification",invValidate.classificationRules(),invValidate.checkClassificationData,utilities.handleErrors(invController.addClassification))
+router.post("/add-classification", utilities.checkAuthorized,invValidate.classificationRules(),invValidate.checkClassificationData,utilities.handleErrors(invController.addClassification))
 
 // add new inventory
 router.post("/add-inventory",invValidate.inventoryRules(),invValidate.checkNewInventoryData,utilities.handleErrors(invController.addInventory))
