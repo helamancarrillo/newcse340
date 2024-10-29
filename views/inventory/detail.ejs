@@ -7,3 +7,53 @@
     <%- messages() %>
 
     <%- grid %>
+
+    <div class="reviews-container">
+      <h2>Customer Reviews</h2>
+
+      <%- reviews %>
+
+      <% if (locals.loggedin) { %>
+        <h2>Set the tone!</h2>
+
+        <!-- error messages -->
+        <% if (errors) { %>
+          <ul class="notice">
+         <% errors.array().forEach(error => { %>
+           <li><%= error.msg %></li>
+        <%  }) %>
+         </ul>
+        <% } %>
+
+        <div id="review-form-card">
+          <fieldset id="fielset">
+          <form id="review-inventory-form" action="/review/add-review" method="POST">
+          <label>Online Name: 
+            <input type="text" 
+              name="screen_name" 
+              class="form-input" 
+              readonly
+              
+              value="<%- screen_name %>"
+            >
+          </label>    
+          <label>Review:
+            <textarea name="review_text" 
+              class="form-input" 
+              required 
+              minlength="10"
+              placeholder="Write your review..."
+              ><%= review_text %></textarea>
+          </label>
+          <input type="submit" value="Submit Review" class="review-form-button"
+            title="Click here to submit your review" id="submit-review-btn">
+          
+          <input type="hidden" name="inv_id" value="<%- inv_id %>">
+          <input type="hidden" name="account_id" value="<%= locals.accountData.account_id %>">
+        </fieldset>
+        </form>
+      <% } else { %>
+        <p class="review=login-note">You must <a class="review-login-link" href="/account/login/">login</a> to write a review.</p>
+      <% } %>
+    </div>
+  </div>

@@ -1,5 +1,6 @@
 const utilities = require("../utilities")
 const accountModel = require("../models/account-model")
+const reviewModel = require("../models/review-model")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 require("dotenv").config()
@@ -36,9 +37,13 @@ async function buildRegister(req, res, next) {
 * *************************************** */
 async function buildAccountMgmt(req, res, next) {
   let nav = await utilities.getNav()
+  const account_id = res.locals.accountData.account_id
+  const reviewData = await reviewModel.getReviewsByAccountId(account_id)
+  const reviews = await utilities.buildAccountReviewList(reviewData)
   res.render("account", {
     title: "Account Management",
     nav,
+    reviews,
     errors: null,
   })
 }
@@ -47,7 +52,7 @@ async function buildAccountMgmt(req, res, next) {
 *  Deliver account edit view
 * *************************************** */
 async function buildEditAccount(req, res, next) {
-  console.log("Executing buildEditAccount middleware");
+  //console.log("Executing buildEditAccount middleware");
   const account_id = parseInt(req.params.account_id)
   let nav = await utilities.getNav()
   const userData = await accountModel.getAccountById(account_id)

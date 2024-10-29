@@ -1,11 +1,11 @@
 const utilities = require(".")
-const invModel = require("../models/inventory-model")
 const { body, validationResult } = require("express-validator")
 const validate = {}
 
 /* **********************************
 *  New Classification Data Validation Rules
 * ********************************* */
+
 validate.classificationRules = () => {
     return [
         body("classification_name")
@@ -14,17 +14,15 @@ validate.classificationRules = () => {
         .notEmpty()
         .withMessage("A valid name is required.")
         .isWhitelisted("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
-        .withMessage("Classification must contain alphabetic characters only (A-Z, a-z)")
-        
+        .withMessage("Classification must contain alphabetic characters only (A-Z, a-z), with no spaces.")  
     ]
 }
-
 
 /* **********************************
 *  New Inventory Data Validation Rules
 * ********************************* */
+
 validate.inventoryRules = () => {
-  
     return [
         body("classification_id")
         .trim()
@@ -72,7 +70,7 @@ validate.inventoryRules = () => {
         .withMessage("Price must be a valid number.")
         .bail()
         .isInt({gt: 0})
-        .withMessage("Price must be positive integer. (digits only)")
+        .withMessage("Price must be positive whole number. (digits only)")
         .isLength({ max: 9 })
         .withMessage("Price cannot exceed 9 digits. (digits only)"),
         
@@ -101,7 +99,6 @@ validate.inventoryRules = () => {
         .withMessage("Color is required.")
     ]
 }
-
 
 validate.checkClassificationData = async (req, res, next) => {
     const { classification_name } = req.body
@@ -151,7 +148,6 @@ validate.checkNewInventoryData = async (req, res, next) => {
             console.error("Error rendering page:", err)
             res.status(500).send("Server error while rendering the page.")
         }
-        
     }
     next()
 }
@@ -164,27 +160,27 @@ validate.checkEditInventoryData = async (req, res, next) => {
     errors = validationResult(req)
     if (!errors.isEmpty()) {
         try {
-        let nav = await utilities.getNav()
-        const classList = await utilities.buildClassificationList(classification_id)
-        const invName = `Edit: ${inv_make} ${inv_model}`
-        res.render("./inventory/edit-inventory", {
-            errors,
-            title: invName, 
-            nav,
-            classList,
-            classification_id,
-            inv_id,
-            inv_make,
-            inv_model,
-            inv_description,
-            inv_image,
-            inv_thumbnail,
-            inv_price,
-            inv_year,
-            inv_miles,
-            inv_color,
-        })
-        return
+            let nav = await utilities.getNav()
+            const classList = await utilities.buildClassificationList(classification_id)
+            const invName = `Edit: ${inv_make} ${inv_model}`
+            res.render("./inventory/edit-inventory", {
+                errors,
+                title: invName, 
+                nav,
+                classList,
+                classification_id,
+                inv_id,
+                inv_make,
+                inv_model,
+                inv_description,
+                inv_image,
+                inv_thumbnail,
+                inv_price,
+                inv_year,
+                inv_miles,
+                inv_color,
+            })
+            return
         } catch (err) {
             console.error("Error rendering page:", err)
             res.status(500).send("Server error while rendering the page.")
@@ -192,6 +188,5 @@ validate.checkEditInventoryData = async (req, res, next) => {
     }
     next()
 }
-
 
 module.exports = validate

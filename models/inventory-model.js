@@ -16,8 +16,6 @@ async function isClassificationValid(classification_id) {
   }
 }
 
-
-
 /* ***************************
  *  Get all inventory items and classification_name by classification_id
  * ************************** */
@@ -36,11 +34,14 @@ async function getInventoryByClassificationId(classification_id) {
   }
 }
 
+/* ***************************
+ *  Get all inventory details by inv_id
+ * ************************** */
 async function getInventoryByInvId(inv_id) {
   try {
     const data = await pool.query(
-      `SELECT * FROM public.inventory AS i
-      WHERE i.inv_id = $1`,
+      `SELECT * FROM public.inventory
+      WHERE inv_id = $1`,
       [inv_id]
     )
     return data.rows[0] //Returns one row with vehicle details
@@ -65,31 +66,30 @@ async function addClassification(classification_name){
  *  Add new inventory
  * ************************** */
 async function addInventory(classification_id,
-  inv_make,
-  inv_model,
-  inv_description,
-  inv_image,
-  inv_thumbnail,
-  inv_price,
-  inv_year,
-  inv_miles,
-  inv_color,)
-  {
-try {
-  const sql = "INSERT INTO public.inventory (classification_id, " +
-  "inv_make, inv_model, inv_description, inv_image, inv_thumbnail, " +
-  "inv_price, inv_year, inv_miles, inv_color) " +
-  "VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) " +
-  "RETURNING *";
+    inv_make,
+    inv_model,
+    inv_description,
+    inv_image,
+    inv_thumbnail,
+    inv_price,
+    inv_year,
+    inv_miles,
+    inv_color,)
+    {
+  try {
+    const sql = "INSERT INTO public.inventory (classification_id, " +
+    "inv_make, inv_model, inv_description, inv_image, inv_thumbnail, " +
+    "inv_price, inv_year, inv_miles, inv_color) " +
+    "VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) " +
+    "RETURNING *";
 
-  return await pool.query(sql, [classification_id, inv_make,
-    inv_model, inv_description, inv_image, inv_thumbnail,
-    inv_price, inv_year, inv_miles, inv_color])
-} catch (error) {
-  return error.message
+    return await pool.query(sql, [classification_id, inv_make,
+      inv_model, inv_description, inv_image, inv_thumbnail,
+      inv_price, inv_year, inv_miles, inv_color])
+  } catch (error) {
+    return error.message
+  }
 }
-}
-
 
 /* ***************************
  *  Edit inventory
@@ -132,9 +132,8 @@ try {
 }
 }
 
-
 /* ***************************
- *  Edit inventory
+ *  Delete inventory
  * ************************** */
 async function deleteInventory(inv_id)
   {
@@ -147,5 +146,12 @@ async function deleteInventory(inv_id)
   }
 }
 
-module.exports = { getClassifications, getInventoryByClassificationId, getInventoryByInvId, addClassification, addInventory, editInventory, isClassificationValid, deleteInventory };
-
+module.exports = { 
+  getClassifications, 
+  getInventoryByClassificationId, 
+  getInventoryByInvId, 
+  addClassification, 
+  addInventory, 
+  editInventory, 
+  isClassificationValid, 
+  deleteInventory };

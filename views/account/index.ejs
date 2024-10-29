@@ -13,13 +13,20 @@
     <!-- <p class="mgmt-text">You're logged in.</p> -->
     <div class="mgmt">
       <a class="form-button acct-link" href="/account/edit/<%= locals.accountData.account_id %>">Edit Account Information</a>
-  
+      
+      <!-- <h3 id="acct-inv-header">Inventory Management</h3> -->
       <% if (locals.loggedin) {
         if (locals.accountData.account_type === "Employee" || locals.accountData.account_type === "Admin") { %>
-          <h3 id="acct-inv-header">Inventory Management</h3>
           <a class="form-button acct-link" href="/inv">Manage Inventory</a> 
         <% } 
-       } %>
+      } %>
+
+    </div>
+
+    <div id="my-reviews-section">
+      <h2 id="my-reviews-header">Personal Reviews</h2>
+      
+      <%- reviews %>
+  
     </div>
   </div>  
-

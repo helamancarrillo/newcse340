@@ -16,6 +16,7 @@ const static = require("./routes/static")
 const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
 const accountRoute = require("./routes/accountRoute")
+const reviewRoute = require("./routes/reviewRoute")
 const errorRoute = require("./routes/errorRoute")
 const utilities = require("./utilities/")
 const session = require("express-session")
@@ -88,6 +89,11 @@ app.use("/inv", inventoryRoute)
 
 //login and register route
 app.use("/account", accountRoute)
+
+//Review routes
+app.use("/review", reviewRoute)
+
+//error routes
 app.use(errorRoute)
 
 
